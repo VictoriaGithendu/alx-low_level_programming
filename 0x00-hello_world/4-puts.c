@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- * main - Puts function program
+ * main - Entry Point
  * return: 0(Success)
  */
 int main(void)
