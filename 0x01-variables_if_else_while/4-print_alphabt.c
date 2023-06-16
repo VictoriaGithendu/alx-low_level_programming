@@ -6,13 +6,12 @@
 int main(void)
 {
 int ch;
-char ch = 'a';
-while (ch <= 'z')
+for (ch = 'a'; ch <= 'z'; ch++)
 if (ch != 'e' && ch != 'q')
 {
 putchar(ch);
 }
-ch++
+else
 {
 putchar('\n');
 }
