@@ -6,9 +6,9 @@
 int main(void)
 {
 int n;
-for (n = 25; n < 35; n++)
+for (n = 0; n < 10; n++)
 putchar(n);
-if (n != 34)
+if (n != 9)
 {
 putchar(',');
 putchar(' ');
