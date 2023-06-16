@@ -6,9 +6,9 @@
 int main(void)
 {
 int n;
-for (n = 0; n < 10; n++)
+for (n = 3; n < 13; n++)
 putchar(n);
-if (n != 9)
+if (n != 12)
 {
 putchar(',');
 putchar(' ');
