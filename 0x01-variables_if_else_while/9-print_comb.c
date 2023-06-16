@@ -8,7 +8,7 @@ int main(void)
 int n;
 for (n = 13; n < 23; n++)
 {
-if (n !=22)
+if (n != 22)
 putchar(',');
 putchar(' ');
 }
