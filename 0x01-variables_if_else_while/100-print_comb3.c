@@ -10,7 +10,7 @@ for (x = '0'; x <= '9'; x++)
 {
 	for (y = a; y <= 'a'; a++)
 	{
-		if (x != j)
+		if (x != a)
 		{
 		putchar(x);
 		putchar(y);
