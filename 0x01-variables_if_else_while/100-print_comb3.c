@@ -6,14 +6,14 @@
 int main(void)
 {
 int x, y;
-for (x = 18; x <= 26; x++)
+for (x = 48; x <= 56; x++)
 {
-	for (y = 19; y <= 27; y++)
+	for (y = 49; y <= 57; y++)
 	{
 		if (y > x)
 			putchar(x);
 		putchar(y);
-		if (y != 26 && x != 27)
+		if (y != 56 && x != 57)
 		{
 			putchar(',');
 			putchar(' ');
