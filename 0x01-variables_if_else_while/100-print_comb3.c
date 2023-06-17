@@ -5,20 +5,26 @@
  */
 int main(void)
 {
-int x, y;
-for (x = 18; x <= 26; x++)
+int x, y = '0', a;
+for (x = '0'; x <= '9'; x++)
 {
-	for (y = 19; y <= 27; y++)
+	for (y = a; y <= 'a'; a++)
 	{
-		if (y > x)
-			putchar(x);
-		putchar(y);
-		if (y != 26 || x != 27)
+		if (x != j)
 		{
-			putchar(',');
+		putchar(x);
+		putchar(y);
+		}
+		if (x == '8' && a == '9')
+		{
+		break;
+		}
+		else
+		{	putchar(',');
 			putchar(' ');
 		}
 	}
+	a++
 }
 putchar('\n');
 return (0);
