@@ -5,27 +5,26 @@
  */
 int main(void)
 {
-int x, y = '0', a;
-for (x = '0'; x <= '9'; x++)
-{
-	for (y = a; y <= 'a'; a++)
+	int x, y;
+
+	for (x = 48; x <= 56; x++)
+
 	{
-		if (x != a)
+		for (y = 49; y <= 57; y++)
 		{
-		putchar(x);
-		putchar(y);
-		}
-		if (x == '8' && a == '9')
-		{
-		break;
-		}
-		else
-		{	putchar(',');
-			putchar(' ');
+			if (y > x)
+			{
+				putchar(x);
+				putchar(y);
+			if (x != 56 || y != 57)
+			{
+				putchar(',');
+				putcahr(' ');
+			}
+			}
 		}
 	}
-	a++
+	putchar('\n');
+	return (0);
 }
-putchar('\n');
-return (0);
-}
+
