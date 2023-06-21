@@ -17,8 +17,9 @@ int main(void)
 		y = sum;
 
 		if (z == 49)
-			printf(",");
+			printf('\n');
 		else
+			printf(",");
 		printf(" ");
 	}
 	return (0);
