@@ -19,7 +19,6 @@ int main(void)
 		if (z == 49)
 			printf("\n");
 		else
-			printf(",");
 		printf(" ");
 	}
 	return (0);
