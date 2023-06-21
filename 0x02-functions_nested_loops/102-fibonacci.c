@@ -11,12 +11,12 @@ int main(void)
 	for (z = 0; z < 50; z++)
 	{
 		sum = x + y;
-		printf("%lu", sum);
+		printf("%d", sum);
 
 		x = y;
 		y = sum;
 
-		if (z < 49)
+		if (z == 49)
 			printf("\n");
 		else
 			printf(",");
