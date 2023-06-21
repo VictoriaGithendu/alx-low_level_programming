@@ -9,13 +9,16 @@ int main(void)
 	int y = 2;
 	int z;
 
-	printf("%d\n%d\n", x, y);
+	printf("%d, %d, ", x, y);
 
-	for ( x = 3; x <= 50; x++)
+	for (x = 3; x <= 50; x++)
+	z = x + y;
+	printf("%d", z);
+
+	if (x < 50)
 	{
-		z = x + y;
-		printf("%d\n", z);
-	
+		printf(", ");
+	}
 		x = y;
 		y = z;
 	}
