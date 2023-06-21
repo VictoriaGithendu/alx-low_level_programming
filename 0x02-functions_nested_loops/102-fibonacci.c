@@ -8,7 +8,7 @@ int main(void)
 	int z;
 	unsigned long x = 0, y = 1, sum;
 
-	for (z = 0; z <= 50; z++)
+	for (z = 0; z < 50; z++)
 	{
 		sum = x + y;
 		printf("%lu", sum);
@@ -16,7 +16,7 @@ int main(void)
 		x = y;
 		y = sum;
 
-		if (z == 49)
+		if (z < 49)
 			printf("\n");
 		else
 			printf(",");
