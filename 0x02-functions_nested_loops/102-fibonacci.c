@@ -5,20 +5,21 @@
  */
 int main(void)
 {
-	int n;
-	long int x, y, z;
+	int x = 1;
+	int y = 2;
+	int z;
 
-	x = 1
-	y = 2
+	printf("%d\n%d\n", x, y);
 
-	printf("%ld", "%ld", x, y);
-
-	for (n = 0; n < 48; n++)
+	for ( x = 3; x <= 50; x++)
 	{
 		z = x + y;
-		printf(", %ld", z);
+		printf("%d\n", z);
+	
+		x = y;
+		y = z;
 	}
-	printf('\n');
 	return (0);
 }
+
 
