@@ -17,8 +17,6 @@ int main(void)
 	{
 		z = x + y;
 		printf(", %ld", z);
-		x = y
-		y = z
 	}
 	printf('\n');
 	return (0);
