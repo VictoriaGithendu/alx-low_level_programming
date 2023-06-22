@@ -5,7 +5,7 @@
  *
  * Fizz prints multiples of three and Buzz multiples of five
  * FizzBuzz prints multiples of both
- * Return: 0
+ * Return: 0 (Success)
  */
 int main(void)
 {
@@ -20,7 +20,7 @@ int main(void)
 		else if (x % 5 == 0)
 			printf("Buzz");
 		else
-			printf("%x", x);
+			printf("%d", x);
 		if (x < 100)
 		printf(" ");
 	}
