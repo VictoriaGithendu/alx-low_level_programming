@@ -9,42 +9,44 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int overflow = 0, x = 0, y = 0, digits = 0;
-	int val1 = 0, val2 = 0, temp_tot = 0;
+	int x = 0, y = 0, op, bg, dr1, dr2, add = 0;
 
 	while (*(n1 + x) != '\0')
 		x++;
 	while (*(n2 + y) != '\0')
 		y++;
-	x--;
-	y--;
-	if (y >= size_r || x >= size_r)
+	if (x >= y)
+		bg = x;
+	else
+		bg = y;
+	if (size_r <= bg + 1)
 		return (0);
-	while (y >= 0 || x >= 0 || overflow == 1)
-	{
-		if (x < 0)
-			val1 = 0;
-		else
-			val1 = *(n1 + x) - '0';
-		if (y < 0)
-			val2 = 0;
-		else
-			val2 = *(n2 + y) - '0';
-		temp_tot = val1 + val2 + overflow;
-		if (temp_tot >= 10)
-			overflow = 1;
-		else
-			overflow = 0;
-		if (digits >= (size_r - 1))
-			return (0);
-		*(r + digits) = (temp_tot % 10) + '0';
-		digits++;
-		y--;
-		x--;
-	}
-	if (digits == size_r)
-		return (0);
-	*(r + digits) = '\0';
-
-	return (r);
+	r[bg + 1] = '\0';
+	x--, y--, size_r--;
+	dr1 = *(n1 + x) - 48, dr2 = *(n2 + y) - 48;
+		while (bg >= 0)
+		{
+			op = dr1 + dr2 + add;
+			if (op >= 10)
+				add = op / 10;
+			else
+				add = 0;
+			if (op > 0)
+				*(r + bg) = (op % 10) + 48;
+			else
+				*(r + bg) = '\0';
+			if (x > 0)
+				x--, dr1 = *(n1 + x) - 48;
+			else
+				dr1 = 0;
+			if (y > 0)
+				y--, dr2 = *(n2 + y) - 48;
+			else
+				dr2 = 0;
+			bg--, size_r--;
+		}
+	if (*(r) == '0')
+		return (r + 1);
+	else
+		return (r);
 }
