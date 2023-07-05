@@ -1,5 +1,4 @@
 #include "main.h"
-#include<stdio.h>
 /**
  * print_buffer - prints a buffer
  * @b: buffer
@@ -16,7 +15,7 @@ void print_buffer(char *b, int size)
 	{
 		for (x = 0; x < size; x += 10)
 		{
-			printf("%.8x:", x);
+			printf("%.8x", x);
 		for (y = x; y < x + 10; y++)
 		{
 			if (y % 2 == 0)
