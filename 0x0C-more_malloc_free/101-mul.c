@@ -35,7 +35,6 @@ int _strlen(char *s)
 }
 /**
  * errors - handles main errors
- * Return: 0
  */
 void errors(void)
 {
@@ -71,7 +70,7 @@ int main(int argc, char *argv[])
 		for (leny = _strlen(y) - 1; leny >= 0; leny--)
 		{
 			digity = y[leny] - '0';
-			carry += result[lenx + leny + 1] + (digitx + digity);
+			carry += result[lenx + leny + 1] + (digitx * digity);
 			result[lenx + leny + 1] = carry % 10;
 			carry /= 10;
 		}
