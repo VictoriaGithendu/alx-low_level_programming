@@ -10,31 +10,37 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *z;
-	int x, y, lenx, leny, len;
+	int x, y, lenx, leny;
 
-	lenx = leny = 0;
+	while (s1 && s1[lenx])
+		lenx++;
+	while (s2 && s2[leny])
+		leny++;
 
-	if (s1 != NULL)
-	{
-		x = 0;
-		while (s1[x] != '\0')
-			lenx++, x++;
-	}
-	if (s2 != NULL)
-	{
-		y = 0;
-		while (s2[y] != '\0')
-			leny++, y++;
-	}
-	len = lenx + leny;
-	z =(char *)malloc(sizeof(char) * (len + 1));
+	z = malloc(sizeof(char) * (lenx + leny + 1));
 	if (z == NULL)
 		return (NULL);
 
-	for (x = 0; x < lenx; x++)
-		z[x] = s1[x];
-	for (y = 0; y < leny; y++)
-		z[y] = s2[y];
-	z[len] = '\0';
+	x = 0;
+	y = 0;
+
+	if (s1)
+	{
+		while (x < lenx)
+		{
+			z[x] = s1[x];
+			x++;
+		}
+	}
+	if (s2)
+	{
+		while (x < (lenx + leny))
+		{
+			z[x] = s2[y];
+			x++;
+			y++;
+		}
+	}
+	z[x] = '\0';
 	return (z);
 }
