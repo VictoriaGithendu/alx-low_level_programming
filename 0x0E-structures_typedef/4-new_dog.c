@@ -9,7 +9,7 @@ int _strlen(char *s)
 {
 	int x = 0;
 
-	while (*s)
+	while (*s++)
 		x++;
 	return (x);
 }
@@ -17,7 +17,7 @@ int _strlen(char *s)
  * _strcopy - copies pointed string
  * @dest: buffer
  * @src: source
- * Return: copied string
+ * Return: pointer to dest
  */
 char *_strcopy(char *dest, char *src)
 {
@@ -34,7 +34,7 @@ char *_strcopy(char *dest, char *src)
  * @name: dog name
  * @owner: dog owner
  * @age: dog age
- * Return: 0
+ * Return: pointer to new dog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
