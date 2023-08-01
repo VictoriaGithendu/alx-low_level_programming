@@ -16,7 +16,7 @@ return (NULL);
 while (slow && fast && fast->next)
 {
 fast = fast->next->next;
-slow = slow->next;
+slow = slow->next->next;
 if (fast == slow)
 {
 slow = head;
