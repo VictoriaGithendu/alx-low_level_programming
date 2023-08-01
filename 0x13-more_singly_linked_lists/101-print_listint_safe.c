@@ -8,8 +8,8 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *fast = head;
-	listint_t *slow = head;
+	listint_t *fast = 0;
+	listint_t *slow = 0;
 
 	if (!head)
 		return (NULL);
@@ -23,7 +23,7 @@ size_t print_listint_safe(const listint_t *head)
 			while (slow != fast)
 			{
 				slow = slow->next;
-				fast = fast->fast;
+				fast = fast->next;
 			}
 			return (fast);
 		}
