@@ -8,30 +8,25 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *temp;
-	int x;
-	size_t y = 0;
+	listint_t *fast = head;
+	listint_t *slow = head;
 
-	if (!h || !*h)
-		return (0);
-	while (*h)
+	if (!head)
+		return (NULL);
+	while (slow && fast && fast->next)
 	{
-		x = *h - (*h)->next;
-		if (x > 0)
+		fast = fast->next->next;
+		slow = slow->next;
+		if (fast == slow)
 		{
-			temp = (*h)->next;
-			free(*h);
-			*h = temp;
-			y++;
-		}
-		else
-		{
-			free(*h);
-			*h = NULL;
-			y++;
-			break;
+			slow = head;
+			while (slow != fast)
+			{
+				slow = slow->next;
+				fast = fast->fast;
+			}
+			return (fast);
 		}
 	}
-	*h = NULL;
-	return (y);
+	return (NULL);
 }
