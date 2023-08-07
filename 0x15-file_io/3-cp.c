@@ -1,6 +1,7 @@
 #include "main.h"
 #include<stdlib.h>
 #include<stdio.h>
+#define BUFF_SIZE 1024
 /**
  * error_98 - Checks error 98
  * @y: Value
@@ -48,7 +49,7 @@ void error_100(int z, char *buffer)
 /**
  * main - Function to copy file contents
  * @argc: no of arguements
- * @argv: array of arguements
+ * @argv: array of arguements pointer
  * Return: 0
  */
 int main(int argc, char **argv)
@@ -61,7 +62,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	buffer = malloc(sizeof(char) * 1024);
+	buffer = malloc(sizeof(char) * BUFF_SIZE);
 	if (!buffer)
 		return (0);
 	y = open(argv[1], O_RDONLY);
@@ -69,13 +70,13 @@ int main(int argc, char **argv)
 	x = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	error_99(x, buffer, argv[2]);
 	do {
-		z = read(y, buffer, O_RDONLY);
+		z = read(y, buffer, BUFF_SIZE);
 		if (z == 0)
 			break;
 		error_98(z, buffer, argv[1]);
 		v = write(x, buffer, z);
 		error_99(v, buffer, argv[2]);
-	} while (v >= 1024);
+	} while (v >= BUFF_SIZE);
 	z = close(x);
 	error_100(z, buffer);
 	z = close(y);
