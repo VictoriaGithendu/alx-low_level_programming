@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 /**
- * create_buffer - function to allocate bytes
+ * create_buffer - function to allocate 1024 bytes to buffer
  * @file: file buffer name
  * Return: pointer to buffer
  */
@@ -10,7 +10,7 @@ char *create_buffer(char *file)
 {
 	char *buffer;
 
-	buffer = malloc(sizeof(char) *1024);
+	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
