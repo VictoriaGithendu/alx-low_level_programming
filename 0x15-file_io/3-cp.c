@@ -21,31 +21,31 @@ int main(int argc, char *argv[])
 	if (!buffer)
 		return (0);
 	y = open(argv[1], O_RDONLY);
-	check_98(y, buffer, argv[1]);
+	error_98(y, buffer, argv[1]);
 	x = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	check_99(x, buffer, argv[2]);
+	error_99(x, buffer, argv[2]);
 	do {
 		z = read(y, buffer, O_RDONLY);
 		if (z == 0)
 			break;
-		check_98(z, buffer, argv[1]);
+		error_98(z, buffer, argv[1]);
 		v = write(x, buffer, z);
-		check_99(v, buffer, argv[2]);
+		error_99(v, buffer, argv[2]);
 	} while (v >= 1024);
 	z = close(x);
-	check_100(z, buffer);
+	error_100(z, buffer);
 	z = close(y);
-	check_100(z, buffer);
+	error_100(z, buffer);
 	free(buffer);
 	return (0);
 }
 /**
- * check_98  - checks error 98
+ * error_98  - checks error 98
  * @buffer: Buffer
  * @argv: array of arguements
  * @x: Value
  */
-void check_98(int x, char *argv[], char *buffer)
+void error_98(int x, char *argv[], char *buffer)
 {
 	if (x < 0)
 	{
@@ -55,12 +55,12 @@ void check_98(int x, char *argv[], char *buffer)
 	}
 }
 /**
- * check_99 - Checks error 99
+ * error_99 - Checks error 99
  * @buffer: Buffer
  * @argv: array of arguements
  * @x: value
  */
-void check_99(int x, char *buffer, char *argv[])
+void error_99(int x, char *buffer, char *argv[])
 {
 	if (x < 0)
 	{
@@ -70,11 +70,11 @@ void check_99(int x, char *buffer, char *argv[])
 	}
 }
 /**
- * check_100 - Checks error 100
+ * error_100 - Checks error 100
  * @x: value
  * @buffer: Buffer
  */
-void check_100(int x, char *buffer)
+void error_100(int x, char *buffer)
 {
 	if (x < 0)
 	{
