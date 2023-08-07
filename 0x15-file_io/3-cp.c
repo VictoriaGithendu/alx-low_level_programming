@@ -7,10 +7,11 @@
  * @argv: array of arguements
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	char *buffer;
 	int x, y, z, v;
+	error_98, error_99, error_100;
 
 	if (argc != 3)
 	{
@@ -43,11 +44,11 @@ int main(int argc, char *argv[])
  * error_98  - checks error 98
  * @buffer: Buffer
  * @argv: array of arguements
- * @x: Value
+ * @y: Value
  */
-void error_98(int x, char *argv[], char *buffer)
+void error_98(int y, char *argv[], char *buffer)
 {
-	if (x < 0)
+	if (y < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		free(buffer);
@@ -71,12 +72,12 @@ void error_99(int x, char *buffer, char *argv[])
 }
 /**
  * error_100 - Checks error 100
- * @x: value
+ * @z: value
  * @buffer: Buffer
  */
-void error_100(int x, char *buffer)
+void error_100(int z, char *buffer)
 {
-	if (x < 0)
+	if (z < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", x);
 		free(buffer);
