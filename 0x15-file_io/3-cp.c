@@ -2,6 +2,50 @@
 #include<stdlib.h>
 #include<stdio.h>
 /**
+ * error_98 - Checks error 98
+ * @y: Value
+ * @argv: arguements array
+ * @buffer: Buffer
+ */
+void error_98(int y, char *buffer, char *argv)
+{
+	if (y < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv);
+		free(buffer);
+		exit(98);
+	}
+}
+/**
+ * error_99 - checks error 99
+ * @x: value
+ * @argv: array of arguements
+ * @buffer: buffer
+ */
+void error_99(int x, char *buffer, char *argv)
+{
+	if (x < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv);
+		free(buffer);
+		exit(99);
+	}
+}
+/**
+ * error_100 - Checks error 100
+ * @z: value
+ * @buffer: Buffer
+ */
+void error_100(int z, char *buffer)
+{
+	if (z < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", z);
+		free(buffer);
+		exit(100);
+	}
+}
+/**
  * main - Function to copy file contents
  * @argc: no of arguements
  * @argv: array of arguements
@@ -11,7 +55,6 @@ int main(int argc, char **argv)
 {
 	char *buffer;
 	int x, y, z, v;
-	error_98, error_99, error_100;
 
 	if (argc != 3)
 	{
@@ -39,48 +82,4 @@ int main(int argc, char **argv)
 	error_100(z, buffer);
 	free(buffer);
 	return (0);
-}
-/**
- * error_98  - checks error 98
- * @buffer: Buffer
- * @argv: array of arguements
- * @y: Value
- */
-void error_98(int y, char *argv[], char *buffer)
-{
-	if (y < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		free(buffer);
-		exit(98);
-	}
-}
-/**
- * error_99 - Checks error 99
- * @buffer: Buffer
- * @argv: array of arguements
- * @x: value
- */
-void error_99(int x, char *buffer, char *argv[])
-{
-	if (x < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv);
-		free(buffer);
-		exit(99);
-	}
-}
-/**
- * error_100 - Checks error 100
- * @z: value
- * @buffer: Buffer
- */
-void error_100(int z, char *buffer)
-{
-	if (z < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", x);
-		free(buffer);
-		exit(100);
-	}
 }
