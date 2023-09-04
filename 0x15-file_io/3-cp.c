@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * create_buffer - function that allocates 1024 buffer bytes
+ * @file: name of file buffer
  * Return: pointer to buffer
  */
 char *create_buffer(const char *file)
