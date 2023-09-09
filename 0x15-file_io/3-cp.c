@@ -1,10 +1,12 @@
 #include "main.h"
+#include<stdio.h>
+#include<stdlib.h>
 /**
  * create_buffer - Function that allocates 1024 bytes
  * @filename: the file name
  * Return: pointer to new allocated memory
  */
-void *create_buffer(char *filename)
+char *create_buffer(char *filename)
 {
 	char *buffer;
 	buffer = malloc(sizeof(char) * 1024);
