@@ -5,24 +5,22 @@
  */
 void print_binary(unsigned long int n)
 {
-	int bit_count = 0;
-	unsigned long int mask = 1;
+	int flag, x = 0;
 
-	mask <<= (sizeof(unsigned long int) * 8 - 1);
-
-	while (mask > 0)
+	if (n == 0)
 	{
-		if (n & mask)
+		_putchar('0');
+	}
+	for (x = 63; x >= 0; x--)
+	{
+		if ((n >> x) & 1)
 		{
 			_putchar('1');
-			bit_count++;
+			flag = 1;
 		}
-		else if (bit_count > 0 || mask == 1)
+		else if (flag)
 		{
 			_putchar('0');
 		}
-		mask >>= 1;
 	}
-	if (bit_count == 0)
-		_putchar('0');
 }
