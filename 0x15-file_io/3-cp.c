@@ -24,8 +24,9 @@ char *create_buffer(char *filename)
  */
 void close_file(int fd)
 {
-	int c = close(fd);
+	int c;
 
+	c = close(fd);
 	if (c == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
