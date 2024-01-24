@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 """Defines an island perimeter measuring function."""
 
 
@@ -18,7 +18,7 @@ def island_perimeter(grid):
     size = 0
 
     for x in range(height):
-        for j in range(width):
+        for y in range(width):
             if grid[x][y] == 1:
                 size += 1
                 if (y > 0 and grid[x][y - 1] == 1):
